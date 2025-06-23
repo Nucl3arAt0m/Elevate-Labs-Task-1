@@ -1,0 +1,17 @@
+# Nmap 7.97 scan initiated Mon Jun 23 15:23:01 2025 as: nmap -sS -oN scan_results.txt -oX scan_results.xml 192.168.192.0/24
+Nmap scan report for _gateway (192.168.192.224)
+Host is up (0.0069s latency).
+Not shown: 999 closed tcp ports (reset)
+PORT   STATE SERVICE
+53/tcp open  domain
+MAC Address: 0E:60:95:3E:98:61 (Unknown)
+
+Nmap scan report for NuclearAtom.local (192.168.192.94)
+Host is up (0.0000050s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT    STATE SERVICE
+22/tcp  open  ssh
+80/tcp  open  http
+902/tcp open  iss-realsecure
+
+# Nmap done at Mon Jun 23 15:24:41 2025 -- 256 IP addresses (2 hosts up) scanned in 100.42 seconds
