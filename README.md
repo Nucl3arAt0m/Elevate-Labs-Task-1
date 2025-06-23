@@ -1,19 +1,19 @@
 # Elevate-Labs-Task-1
-Day 1: Nmap Cybersecurity Task
-Overview
+## Day 1: Nmap Cybersecurity Task
+### Overview
 This repository contains the deliverables for Day 1 of my cybersecurity internship with Elevate Labs, completed on June 23, 2025. The task involves using Nmap to perform a TCP SYN scan on a local network, analyzing results, and documenting findings. The goal is to identify live hosts, open ports, associated services, and potential security risks, with optional packet analysis using Wireshark.
-Task Requirements
+### Task Requirements
 
-Install Nmap from the official website.
-Find the local IP range (e.g., 192.168.1.0/24).
-Run nmap -sS 192.168.1.0/24 for a TCP SYN scan.
-Note IP addresses and open ports found.
-Optionally analyze packet capture with Wireshark.
-Research common services on open ports.
-Identify potential security risks.
-Save scan results as text or HTML.
+1. Install Nmap from the official website.
+2. Find the local IP range (e.g., 192.168.1.0/24).
+3. Run nmap -sS 192.168.1.0/24 for a TCP SYN scan.
+4. Note IP addresses and open ports found.
+5. Optionally analyze packet capture with Wireshark.
+6. Research common services on open ports.
+7. Identify potential security risks.
+8. Save scan results as text or HTML.
 
-Tools Used
+### Tools Used
 
 Nmap: Network scanning tool (version 7.95).
 Wireshark: Packet analysis tool (version 4.2.5).
