@@ -1,33 +1,54 @@
-IP: 192.168.192.94
+# Nmap Scan Notes
 
-PORT    STATE SERVICE
-22/tcp  open  ssh
-80/tcp  open  http
-902/tcp open  iss-realsecure
+## IP Address and Open Ports
+- **IP**: `192.168.192.94`
+- **Ports and Services**:
+  - `22/tcp`: Open, SSH
+  - `80/tcp`: Open, HTTP
+  - `902/tcp`: Open, iss-realsecure
 
-Observed SYN-ACK respones from 192.168.192.94 on port 22 and 80
+## Wireshark Findings
+- Observed SYN-ACK responses from `192.168.192.94` on ports `22` and `80`.
 
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.12 (Ubuntu Linux; protocol 2.0)
-80/tcp open  http    Apache httpd 2.4.58 ((Ubuntu))
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+## Service and Version Details
+- **Port 22**:
+  - **Service**: SSH
+  - **Version**: OpenSSH 9.6p1 Ubuntu 3ubuntu13.12 (Ubuntu Linux; protocol 2.0)
+- **Port 80**:
+  - **Service**: HTTP
+  - **Version**: Apache httpd 2.4.58 (Ubuntu)
+- **Service Info**:
+  - **OS**: Linux
+  - **CPE**: `cpe:/o:linux:linux_kernel`
 
-port 22 is used for secure remote login to linux systems, secure file transfer and CLI
+## Service Descriptions
+- **Port 22 (SSH)**:
+  - Used for secure remote login to Linux systems, secure file transfer, and command-line interface (CLI) access.
+- **Port 80 (HTTP)**:
+  - Used for serving websites over an unencrypted connection.
+  - Handles web traffic from browsers.
+  - Note: Since port 80 is not encrypted, HTTPS (port 443) is preferred for secure website browsing.
+- **Port 902 (iss-realsecure)**:
+  - Associated with VMware or ISS RealSecure, often used for virtualization or intrusion detection systems.
 
-port 80 is used for http service, Serving websites over an unencrypted connection and is also used for web traffic from browsers. Since this port is not encrypted, HTTPS is used for secure website browsing (port 443)
+## Security Risks
+- **Port 22 (SSH)**:
+  - Risk of brute-force attacks if weak passwords are used.
+- **Port 80 (HTTP)**:
+  - Lack of encryption allows attackers to intercept sensitive data.
+  - Vulnerable to Man-in-the-Middle (MITM) attacks.
+- **Port 902 (iss-realsecure)**:
+  - Potential vulnerabilities in VMware or ISS software if unpatched, exposing the system to exploits.
 
-Risks from open ports:
-
---> On open port 22, there is riskmof brute force attacksa if wek passwords are used
---> On port 80, since there is not encryption, it allows attackers to intercept sensitive data and allow them to perform Man-In-The-Middle attacks.
-
-Mitigations:
-
---> On port 22: Implement SSH keys and restrict access via firewall. 
-		Keep SSH software updated.
-
---> On port 80: Use WAF(Web Application Firewall) 
-		Redirect HTTP to HTTPS using TLS(Transport Laper Security).
-		
-
-		
+## Mitigations
+- **Port 22 (SSH)**:
+  - Implement SSH keys for authentication.
+  - Restrict access via firewall (e.g., allow only specific IPs).
+  - Keep SSH software updated to patch vulnerabilities.
+- **Port 80 (HTTP)**:
+  - Deploy a Web Application Firewall (WAF) to protect against web-based attacks.
+  - Redirect HTTP traffic to HTTPS using Transport Layer Security (TLS).
+  - Regularly update Apache server to address known vulnerabilities.
+- **Port 902 (iss-realsecure)**:
+  - Ensure VMware or ISS software is updated.
+  - Restrict access to trusted networks via firewall rules.
