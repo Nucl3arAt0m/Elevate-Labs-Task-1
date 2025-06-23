@@ -15,7 +15,7 @@ This repository contains the deliverables for Day 1 of my cybersecurity internsh
 
 ### Tools Used
 
-Nmap: Network scanning tool (version 7.95).
+• Nmap: Network scanning tool (version 7.95).
 Wireshark: Packet analysis tool (version 4.2.5).
 xsltproc: For converting Nmap XML to HTML.
 Git: Version control for repository management.
